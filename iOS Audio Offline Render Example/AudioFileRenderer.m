@@ -76,6 +76,10 @@ static inline void AudErrSet(NSError *_Nullable *_Nullable error,
 - (instancetype)initWithSourceFile:(NSURL *)srcURL
                    destinationFile:(NSURL *)destinationURL
                              error:(NSError **)error {
+    if ( !(self=[super init]) ) {
+        AudErrSet(error, -1, @"Couldn't initialize super.");
+        return nil;
+    }
     
     // Re-usable iVars
     CFURLRef cfURL;
