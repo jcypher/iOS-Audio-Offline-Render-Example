@@ -89,7 +89,6 @@
                                                                         preferredStyle:UIAlertControllerStyleAlert];
                 [alert addAction:[UIAlertAction actionWithTitle:@"Dismiss/Stop Playing" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                     [alert dismissViewControllerAnimated:YES completion:NULL];
-                    NSLog(@"will stop player... %@", weakSelf);
                     [weakSelf.player stop];
                     weakSelf.player = nil;
                 }]];
