@@ -48,6 +48,9 @@
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"ERROR: init renderer"
                                                                        message:error.localizedDescription
                                                                 preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            [alert dismissViewControllerAnimated:YES completion:NULL];
+        }]];
         [self presentViewController:alert animated:YES completion:NULL];
     } else {
         
@@ -78,6 +81,9 @@
                 UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"ERROR: play new file"
                                                                                message:error.localizedDescription
                                                                         preferredStyle:UIAlertControllerStyleAlert];
+                [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+                    [alert dismissViewControllerAnimated:YES completion:NULL];
+                }]];
                 [self presentViewController:alert animated:YES completion:NULL];
             } else {
                 CFTimeInterval endTime = CACurrentMediaTime();
@@ -104,6 +110,9 @@
             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"ERROR: rendering"
                                                                            message:errDesc
                                                                     preferredStyle:UIAlertControllerStyleAlert];
+            [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+                [alert dismissViewControllerAnimated:YES completion:NULL];
+            }]];
             [self presentViewController:alert animated:YES completion:NULL];
             self.renderer = nil;
             break;
@@ -123,6 +132,9 @@
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"ERROR: player decode"
                                                                    message:error.localizedDescription
                                                             preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        [alert dismissViewControllerAnimated:YES completion:NULL];
+    }]];
     [self presentViewController:alert animated:YES completion:NULL];
     self.player = nil;
 }
